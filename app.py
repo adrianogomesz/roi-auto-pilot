@@ -6,10 +6,9 @@ from engine import calculate_cpa, calculate_max_cpc, feedback_status, calculate_
 # Configurações da página
 st.set_page_config(
     page_title = "ROI Auto Pilot",
-    layout = "wide"
+    layout = "wide",
+    initial_sidebar_state = "collapsed"
 )
-
-locale.setlocale(locale.LC_MONETARY,"pt_BR.UTF-8")
 
 
 # Conteúdo centralizado
