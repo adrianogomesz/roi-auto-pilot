@@ -1,6 +1,6 @@
-import streamlit as st, pandas as pd, locale, matplotlib.pyplot as plt, matplotlib.ticker as mtick
+import streamlit as st, pandas as pd, matplotlib.pyplot as plt, matplotlib.ticker as mtick
 
-from engine import calculate_cpa, calculate_max_cpc, feedback_status, calculate_scenarios
+from engine import calculate_cpa, calculate_max_cpc, calculate_scenarios
 
 
 # Configurações da página
@@ -9,8 +9,6 @@ st.set_page_config(
     layout = "wide",
     initial_sidebar_state = "collapsed"
 )
-
-locale.setlocale(locale.LC_MONETARY,"pt_BR.UTF-8")
 
 
 # Conteúdo centralizado
@@ -78,10 +76,7 @@ with col_left:
 
     if results:
         df[transform_data] = df[transform_data] * 100
-        df['cpa'] = df['cpa'].apply(lambda x: locale.currency(x, grouping=True))
-
     
-
     df = df.rename(columns=rename_results)
 
 
@@ -101,6 +96,9 @@ with col_left:
                 ),
                 "CPC Máximo": st.column_config.NumberColumn(
                         format = f"R${cpc_max:.2f}"
+                ),
+                "Custo Por Aquisição": st.column_config.NumberColumn(
+                        format = f"R${cpa:.2f}"
                 )
             }
         )
