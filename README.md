@@ -19,4 +19,4 @@ analisarem rapidamente se uma campanha é viável antes de escalar investimento.
 Aplicação hospedada via Streamlit Cloud.
 
 ## 📌 Status
-MVP funcional — em evolução contínua
+MVP funcional.
