@@ -10,6 +10,8 @@ st.set_page_config(
     initial_sidebar_state = "collapsed"
 )
 
+locale.setlocale(locale.LC_MONETARY,"pt_BR.UTF-8")
+
 
 # Conteúdo centralizado
 st.markdown(
